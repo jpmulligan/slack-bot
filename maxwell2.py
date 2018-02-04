@@ -71,6 +71,8 @@ class SlackBot(object):
                     self.parse_dm(event)
                 
                 elif self.logging is True:
+                    # Need to send this to a file instead of stdout
+                    # But found out it's easier just to export Slack channel history to JSON dump
                     print(f"{event['ts']} | {event['channel']} | {event['user']} | {event['text']}")
                     
             else:
