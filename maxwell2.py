@@ -43,8 +43,8 @@ class SlackBot(object):
     def update_users(self):
         self.users = self.client.api_call("users.list")
         print(f"Updated team user list with {len(self.users['members'])} members.")
-        #for user in self.users['members']:
-        #    print(user['id'], user['name'], user['real_name'])
+        for user in self.users['members']:
+            print(user['id'], user['name'], user['real_name'])
         
 
     def send_me(self, message):
